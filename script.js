@@ -1,17 +1,16 @@
 // Declaring the constants 
-// Collecting all the acher tags from HTML page to putting animaions on them onClick!
-const navLink1 = document.getElementById("nav-link1");
-const navLink2 = document.getElementById("nav-link2");
-const navLink3 = document.getElementById("nav-link3");
-const navLink4 = document.getElementById("nav-link4");
-const navLink5 = document.getElementById("nav-link5");
+
+let allNavLinks = []
+function createNavLinks() {
+     allNavLinks = [];
+     for(let i = 0; i < 5 ; i++) {
+        allNavLinks[i] = document.getElementById(`nav-link${i+1}`)
+     }
+}
+createNavLinks();
 
 const nav = document.getElementById("nav");
-const menuBar = document.getElementById("menuBar");
-
-// Now making an Array [] of all acher tags to perform a function instead write again & again. And appling the DRY role here. Don't repeat your self in coding 
-const allNavLinks = [navLink1, navLink2, navLink3, navLink4, navLink5]
-
+const menuBar = document.getElementById("menuBar")
 
 // Now making a function to remove classes as well as add in the acher tag to perform animations
 function addRemoveClasses(action) {
